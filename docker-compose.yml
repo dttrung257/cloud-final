@@ -13,22 +13,21 @@ services:
       - ./src:/app
     networks:
       - cloud_final_net
-    depends_on:
-      - db
-
-  db:
-    restart: always
-    container_name: cloud_final_db
-    image: mysql:8.4.0
-    volumes:
-      - cloud_final_db_volume:/var/lib/mysql
-    environment:
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=cloud_final
-      - MYSQL_USER=cloudfinaluser
-      - MYSQL_PASSWORD=cloudfinalpassword
-    networks:
-      - cloud_final_net
+    # depends_on:
+    #   - db
+    # db:
+    #   restart: always
+    #   container_name: cloud_final_db
+    #   image: mysql:8.4.0
+    #   volumes:
+    #     - cloud_final_db_volume:/var/lib/mysql
+    #   environment:
+    #     - MYSQL_ROOT_PASSWORD=root
+    #     - MYSQL_DATABASE=cloud_final
+    #     - MYSQL_USER=cloudfinaluser
+    #     - MYSQL_PASSWORD=cloudfinalpassword
+    #   networks:
+    #     - cloud_final_net
     # ports:
     #   - 3306:3306
 
